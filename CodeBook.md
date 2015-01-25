@@ -40,3 +40,11 @@ The set of variables that were estimated from these signals are:
 
 mean(): Mean value
 std(): Standard deviation
+
+##How the tidy dataset has been produced
+First, training and test Subjects, Activities and Variables datasets are successively merged into a single dataset, and columns renamed to enable further merge activties later in the code.
+Then Features dataset is read; mean and std features ids and descriptive labels are extracted; and a new vector created to enable a merge with main dataset, based on feature ID.
+Then Activties descriptive labels file is read, and merged as well with the above.
+Main dataset is then melt, using subject_ids and Activity_Names as IDs, and all other components as variables, in order to perform a cast using mean function.
+The result is written is the tidy_dataset.txt file
+
